@@ -154,9 +154,11 @@ export const ContactSection = () => {
                 <p className="text-muted-foreground mb-4">
                   Let's discuss how we can collaborate on sustainable transport research.
                 </p>
-                <Button size="lg" className="w-full gap-2 rounded-full">
-                  <Send className="w-4 h-4" />
-                  Send Message
+                <Button size="lg" className="w-full gap-2 rounded-full" asChild>
+                  <a href="mailto:vaibhavnegi.24@kgpian.iitkgp.ac.in">
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </a>
                 </Button>
               </div>
             </div>

@@ -51,9 +51,11 @@ export const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button variant="default" size="sm" className="gap-2 rounded-full">
-            <Download className="w-4 h-4" />
-            CV
+          <Button variant="default" size="sm" className="gap-2 rounded-full" asChild>
+            <a href="/CV_Vaibhav_Singh_Negi.pdf" target="_blank" rel="noopener noreferrer">
+              <Download className="w-4 h-4" />
+              CV
+            </a>
           </Button>
         </div>
 
@@ -84,9 +86,11 @@ export const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="default" size="sm" className="gap-2 mt-2 rounded-full">
-              <Download className="w-4 h-4" />
-              Download CV
+            <Button variant="default" size="sm" className="gap-2 mt-2 rounded-full" asChild>
+              <a href="/CV_Vaibhav_Singh_Negi.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="w-4 h-4" />
+                Download CV
+              </a>
             </Button>
           </div>
         </motion.div>
