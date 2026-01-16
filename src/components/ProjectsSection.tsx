@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Zap, Building, TrendingUp, Train } from 'lucide-react';
+import { Zap, Building, TrendingUp, Train, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
@@ -9,7 +9,8 @@ const projects = [
     description: "Assessed 950+ ICE buses fleet, conducted GIS-based route mapping, and built scenario-based TCO and GHG emissions models achieving 80% emissions reduction projection over 15 years.",
     icon: Zap,
     tags: ["E-Mobility", "GIS", "Financial Modelling"],
-    category: "E-Mobility",
+    category: "Report",
+    color: "primary",
   },
   {
     title: "Electrifying Bus Fleet Feasibility",
@@ -18,6 +19,7 @@ const projects = [
     icon: Train,
     tags: ["Python", "QGIS", "TCO Analysis"],
     category: "Research",
+    color: "accent",
   },
   {
     title: "Drinking Water Supply System",
@@ -26,6 +28,7 @@ const projects = [
     icon: TrendingUp,
     tags: ["PPP", "DCF", "Excel VBA"],
     category: "Finance",
+    color: "primary",
   },
   {
     title: "Multinomial Logit Analysis",
@@ -34,12 +37,13 @@ const projects = [
     icon: Building,
     tags: ["MNL", "Survey Design", "Transportation"],
     category: "Analysis",
+    color: "accent",
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="section-padding relative">
+    <section id="projects" className="section-padding relative bg-secondary/30">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +52,7 @@ export const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm uppercase tracking-widest text-primary mb-4">Projects</h2>
+          <h2 className="text-sm uppercase tracking-widest text-primary mb-4 font-medium">Projects</h2>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
             Featured Work
           </h3>
@@ -65,13 +69,13 @@ export const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-2xl p-6 md:p-8 hover-lift group"
+              className="card-elevated p-6 md:p-8 hover-lift group"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <project.icon className="w-7 h-7 text-primary" />
+                <div className={`w-14 h-14 rounded-xl ${project.color === 'accent' ? 'bg-accent/10' : 'bg-primary/10'} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <project.icon className={`w-7 h-7 ${project.color === 'accent' ? 'text-accent' : 'text-primary'}`} />
                 </div>
-                <span className="text-xs font-medium text-primary uppercase tracking-wider">
+                <span className={`text-xs font-semibold uppercase tracking-wider ${project.color === 'accent' ? 'text-accent' : 'text-primary'}`}>
                   {project.category}
                 </span>
               </div>
@@ -79,7 +83,9 @@ export const ProjectsSection = () => {
               <h4 className="text-xl font-heading font-bold text-foreground mb-1">
                 {project.title}
               </h4>
-              <p className="text-sm text-primary mb-3">{project.subtitle}</p>
+              <p className={`text-sm mb-3 font-medium ${project.color === 'accent' ? 'text-accent' : 'text-primary'}`}>
+                {project.subtitle}
+              </p>
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                 {project.description}
               </p>
@@ -88,7 +94,7 @@ export const ProjectsSection = () => {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                    className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
                   >
                     {tag}
                   </span>

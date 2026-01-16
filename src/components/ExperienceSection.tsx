@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Building2, ExternalLink } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 const experiences = [
   {
@@ -39,7 +39,7 @@ const experiences = [
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="section-padding relative bg-secondary/20">
+    <section id="experience" className="section-padding relative">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,14 +48,14 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm uppercase tracking-widest text-primary mb-4">Experience</h2>
+          <h2 className="text-sm uppercase tracking-widest text-primary mb-4 font-medium">Experience</h2>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
             Professional Journey
           </h3>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative pl-8 border-l-2 border-border space-y-12">
+          <div className="relative pl-8 border-l-2 border-border space-y-10">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -68,7 +68,7 @@ export const ExperienceSection = () => {
                 {/* Timeline Dot */}
                 <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-primary border-4 border-background" />
                 
-                <div className="glass-card rounded-2xl p-6 md:p-8 hover-lift">
+                <div className="card-elevated p-6 md:p-8 hover-lift">
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                     <div>
                       <h4 className="text-xl font-heading font-bold text-foreground mb-1">
@@ -79,7 +79,7 @@ export const ExperienceSection = () => {
                         <span className="text-sm">{exp.company}</span>
                       </div>
                     </div>
-                    <span className="badge-accent text-xs">
+                    <span className="badge-primary text-xs">
                       {exp.period}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export const ExperienceSection = () => {
                     {exp.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
                       >
                         {tag}
                       </span>
