@@ -30,17 +30,17 @@ export const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card py-3' : 'py-6'
+        isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-border py-3' : 'py-5'
       }`}
     >
       <nav className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-heading font-bold text-primary-foreground">
+          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-heading font-bold text-primary-foreground text-lg">
             V
           </div>
           <div className="hidden sm:block">
             <p className="font-heading font-semibold text-foreground">Vaibhav Singh Negi</p>
-            <p className="text-xs text-primary uppercase tracking-wider">M.Tech Researcher</p>
+            <p className="text-xs text-primary uppercase tracking-wider font-medium">M.Tech Researcher</p>
           </div>
         </a>
 
@@ -51,7 +51,7 @@ export const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button variant="default" size="sm" className="gap-2">
+          <Button variant="default" size="sm" className="gap-2 rounded-full">
             <Download className="w-4 h-4" />
             CV
           </Button>
@@ -71,7 +71,7 @@ export const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden glass-card mt-2 mx-4 rounded-xl p-6"
+          className="lg:hidden bg-background border-b border-border mt-2 mx-4 rounded-xl p-6 shadow-lg"
         >
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
@@ -84,7 +84,7 @@ export const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="default" size="sm" className="gap-2 mt-2">
+            <Button variant="default" size="sm" className="gap-2 mt-2 rounded-full">
               <Download className="w-4 h-4" />
               Download CV
             </Button>
