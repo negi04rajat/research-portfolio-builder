@@ -88,7 +88,7 @@ export const HeroSection = () => {
                 {/* Profile Image - Replace /profile-photo.jpg with your image path */}
                 <div className="w-40 h-40 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 flex items-center justify-center mb-6 overflow-hidden">
                   <img 
-                    src="/profile-photo.jpg" 
+                    src="/profile.jpg" 
                     alt="Vaibhav Singh Negi" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
