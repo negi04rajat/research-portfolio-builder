@@ -85,10 +85,19 @@ export const HeroSection = () => {
             {/* Main Profile Card */}
             <div className="relative">
               <div className="card-elevated p-8 w-full max-w-sm">
-                {/* Profile Image Placeholder - Replace src with your image */}
+                {/* Profile Image - Replace /profile-photo.jpg with your image path */}
                 <div className="w-40 h-40 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 flex items-center justify-center mb-6 overflow-hidden">
-                  {/* TODO: Replace this with your profile image: <img src="/your-photo.jpg" alt="Vaibhav Singh Negi" className="w-full h-full object-cover" /> */}
-                  <span className="text-6xl font-heading font-bold gradient-text">VN</span>
+                  <img 
+                    src="/profile-photo.jpg" 
+                    alt="Vaibhav Singh Negi" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to initials if image not found
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <span className="hidden text-6xl font-heading font-bold gradient-text">VN</span>
                 </div>
                 
                 {/* Stats Grid */}
