@@ -12,14 +12,8 @@ export const Footer = () => {
           className="flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>© 2025 Vaibhav Singh Negi. All rights reserved.</span>
-          </div>
-          
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>Built with</span>
-            <Heart className="w-4 h-4 text-primary fill-primary" />
-            <span>for sustainable mobility</span>
-          </div>
+            <span>© 2026 Vaibhav Singh Negi. All rights reserved.</span>
+          </div>  
         </motion.div>
       </div>
     </footer>
